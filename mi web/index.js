@@ -1,15 +1,16 @@
 const express = require("express");
-const path = require("path");
-
 const app = express();
+
+// Usamos un puerto dinámico para Render
 const PORT = process.env.PORT || 10000;
 
-// 1. Servir archivos estáticos directamente desde la carpeta donde esté este archivo
+// 1. Servir archivos de la carpeta public de forma simple
 app.use(express.static("public"));
 
-// 2. Ruta para entregar el index.html
+// 2. Ruta principal
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  // Aquí le decimos que busque el index.html en la carpeta public que tiene al lado
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 app.listen(PORT, () => {
