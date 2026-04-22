@@ -309,6 +309,25 @@ tbody td:first-child{color:#fff;font-weight:600;}
 }
 </style>
 </head>
+  <script>
+function ltab(t) {
+    // Esto selecciona todas las pestañas y formularios
+    const tabs = document.querySelectorAll('.ltab');
+    const forms = document.querySelectorAll('.lform');
+    
+    // Quita la clase 'on' (encendido) de todos
+    tabs.forEach(el => el.classList.remove('on'));
+    forms.forEach(el => el.classList.remove('on'));
+    
+    if(t == 'in') {
+        tabs[0].classList.add('on');
+        document.getElementById('lf-in').classList.add('on');
+    } else {
+        tabs[1].classList.add('on');
+        document.getElementById('lf-reg').classList.add('on');
+    }
+}
+</script>
 <body>
 
 <!-- ══════════════ LOGIN ══════════════════════════════════ -->
